@@ -65,8 +65,20 @@ https://fontawesome.com/icons?d=gallery */
 
   softwareSkills: [
     {
-      skillName: "Flutter",
-      fontAwesomeClassname: "fab fa-flutter"
+      skillName: "python",
+      fontAwesomeClassname: "fab fa-python"
+    },
+    {
+      skillName: "swift",
+      fontAwesomeClassname: "fab fa-swift"
+    },
+    {
+      skillName: "java",
+      fontAwesomeClassname: "fab fa-java"
+    },
+    {
+      skillName: "Rust",
+      fontAwesomeClassname: "fab fa-rust"
     },
     {
       skillName: "html-5",
@@ -92,10 +104,7 @@ https://fontawesome.com/icons?d=gallery */
       skillName: "nodejs",
       fontAwesomeClassname: "fab fa-node"
     },
-    {
-      skillName: "swift",
-      fontAwesomeClassname: "fab fa-swift"
-    },
+    
     {
       skillName: "npm",
       fontAwesomeClassname: "fab fa-npm"
@@ -112,10 +121,7 @@ https://fontawesome.com/icons?d=gallery */
       skillName: "firebase",
       fontAwesomeClassname: "fas fa-fire"
     },
-    {
-      skillName: "python",
-      fontAwesomeClassname: "fab fa-python"
-    },
+    
     {
       skillName: "docker",
       fontAwesomeClassname: "fab fa-docker"
@@ -129,25 +135,26 @@ https://fontawesome.com/icons?d=gallery */
 const educationInfo = {
   display: true, // Set false to hide this section, defaults to true
   schools: [
+    // {
+    //   schoolName: "University of Dodoma",
+    //   logo: require("./assets/images/udomlogo2.png"),
+    //   subHeader: "Masters Degree in software engineering.",
+    //   duration: "September 2024 - April 2026",
+    //   desc: "Ranked top 10% in the program. Took courses about Software Engineering, Web Security, Operating Systems, ...",
+    //   descBullets: ["Publish Doc about Advanced software re-engineering", "Morden Software design with Docker and Kubernetes"]
+    // },
     {
-      schoolName: "Harvard University",
-      logo: require("./assets/images/harvardLogo.png"),
-      subHeader: "Master of Science in Computer Science",
-      duration: "September 2017 - April 2019",
-      desc: "Participated in the research of XXX and published 3 papers.",
+      schoolName: "Ruaha Catholic University",
+      logo: require("./assets/images/ruculogo.png"),
+      subHeader: "Bachelor Degree in Computer Science software engineering.",
+      duration: "November 2020 - August 2023",
+      desc: "Participated in the various projects.",
       descBullets: [
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit"
+        "Developed a mobile application designed to assist women in tracking pregnancy and menstrual cycles efficiently.",
+        "Designed and developed an interactive video game aimed at enhancing cognitive skills and brain activity in children."
       ]
-    },
-    {
-      schoolName: "Stanford University",
-      logo: require("./assets/images/stanfordLogo.png"),
-      subHeader: "Bachelor of Science in Computer Science",
-      duration: "September 2013 - April 2017",
-      desc: "Ranked top 10% in the program. Took courses about Software Engineering, Web Security, Operating Systems, ...",
-      descBullets: ["Lorem ipsum dolor sit amet, consectetur adipiscing elit"]
     }
+    
   ]
 };
 
@@ -178,30 +185,35 @@ const workExperiences = {
   display: true, //Set it to true to show workExperiences Section
   experience: [
     {
-      role: "Software Engineer",
-      company: "Facebook",
-      companylogo: require("./assets/images/facebookLogo.png"),
-      date: "June 2018 – Present",
-      desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      role: "Software developer",
+      company: "Ministry of Lands, Housing and Human Settlements Development",
+      companylogo: require("./assets/images/emblem.png"),
+      date: "Jan 2025 – Present",
+      desc: "Develop System for supporting and enhance land aquire and ownership ",
       descBullets: [
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit"
+        "Evaluated projected requirements, identified challenges and proposed alternatives using research and data.",
+        "Developed testable software using agile methodologies to create high-quality deliverable."
       ]
     },
     {
-      role: "Front-End Developer",
-      company: "Quora",
-      companylogo: require("./assets/images/quoraLogo.png"),
-      date: "May 2017 – May 2018",
-      desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-    },
-    {
       role: "Software Engineer Intern",
-      company: "Airbnb",
-      companylogo: require("./assets/images/airbnbLogo.png"),
-      date: "Jan 2015 – Sep 2015",
-      desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-    }
+      company: "eGA RIDC",
+      companylogo: require("./assets/images/ega-logo.png"),
+      date: "February 2024 – Jan 2025",
+      desc: "Developed and maintained iOS/Android and backend applications.",
+      descBullets: [
+        "Implemented new features in existing software that resulted increase in user engagement.",
+        "Optimized app performance that enhanced best user experience",
+        "Developed robust back-end applications using Spring Boot for building scalable micro-services, RESTful APIs and managing data, and securing applications."
+      ]
+    },
+    // {
+    //   role: "Software Engineer Intern",
+    //   company: "Airbnb",
+    //   companylogo: require("./assets/images/airbnbLogo.png"),
+    //   date: "Jan 2015 – Sep 2015",
+    //   desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+    // }
   ]
 };
 
@@ -217,28 +229,36 @@ const openSource = {
 
 const bigProjects = {
   title: "Big Projects",
-  subtitle: "SOME STARTUPS AND COMPANIES THAT I HELPED TO CREATE THEIR TECH",
+  subtitle: "I was fully involved in a large-scale project, contributing to every aspect of its development",
   projects: [
     {
-      image: require("./assets/images/saayaHealthLogo.webp"),
-      projectName: "Saayahealth",
-      projectDesc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+      image: require("./assets/images/kakakuona-oxygen.webp"),
+      projectName: "Kakakuona Oxygen",
+      projectDesc: "chatting app for secure communication.",
       footerLink: [
         {
-          name: "Visit Website",
-          url: "http://saayahealth.com/"
+          name: "Android App",
+          url: "https://play.google.com/store/apps/details?id=im.oxygen.app"
+        },
+        {
+          name: "iOS App",
+          url: "https://apps.apple.com/tz/app/kakakuona-oxygen/id6444258363"
         }
         //  you can add extra buttons here.
       ]
     },
     {
-      image: require("./assets/images/nextuLogo.webp"),
-      projectName: "Nextu",
-      projectDesc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+      image: require("./assets/images/emblem.png"),
+      projectName: "eBarua",
+      projectDesc: "Mailing app for secure mailing communication.",
       footerLink: [
         {
-          name: "Visit Website",
-          url: "http://nextu.se/"
+          name: "Android App",
+          url: "https://play.google.com/store/apps/details?id=tz.go.gms&hl=en"
+        },
+        {
+          name: "iOS App",
+          url: "https://apps.apple.com/tz/app/ebarua/id6479197288"
         }
       ]
     }
@@ -256,24 +276,24 @@ const achievementSection = {
 
   achievementsCards: [
     {
-      title: "Google Code-In Finalist",
+      title: "Data Science: Visualization",
       subtitle:
-        "First Pakistani to be selected as Google Code-in Finalist from 4000 students from 77 different countries.",
-      image: require("./assets/images/codeInLogo.webp"),
+        "Basic data visualization principles and how to apply them using ggplot2.",
+      image: require("./assets/images/Harvard-Logo.png"),
       imageAlt: "Google Code-In Logo",
       footerLink: [
         {
           name: "Certification",
-          url: "https://drive.google.com/file/d/0B7kazrtMwm5dYkVvNjdNWjNybWJrbndFSHpNY2NFV1p4YmU0/view?usp=sharing"
+          url: "https://drive.google.com/file/d/1ZDB0B1j08pSty0uzEf0d_xDLEb4dDLBL/view?usp=sharing"
         },
-        {
-          name: "Award Letter",
-          url: "https://drive.google.com/file/d/0B7kazrtMwm5dekxBTW5hQkg2WXUyR3QzQmR0VERiLXlGRVdF/view?usp=sharing"
-        },
-        {
-          name: "Google Code-in Blog",
-          url: "https://opensource.googleblog.com/2019/01/google-code-in-2018-winners.html"
-        }
+        // {
+        //   name: "Award Letter",
+        //   url: "https://drive.google.com/file/d/0B7kazrtMwm5dekxBTW5hQkg2WXUyR3QzQmR0VERiLXlGRVdF/view?usp=sharing"
+        // },
+        // {
+        //   name: "Google Code-in Blog",
+        //   url: "https://opensource.googleblog.com/2019/01/google-code-in-2018-winners.html"
+        // }
       ]
     },
     {
@@ -383,7 +403,7 @@ const contactInfo = {
 // Twitter Section
 
 const twitterDetails = {
-  userName: "twitter", //Replace "twitter" with your twitter username without @
+  userName: "agustin_benard", //Replace "twitter" with your twitter username without @
   display: true // Set true to display this section, defaults to false
 };
 
