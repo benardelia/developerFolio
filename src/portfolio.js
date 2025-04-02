@@ -342,10 +342,10 @@ const blogSection = {
         "Do you want to win $200 and Google Assistant Tshirt by creating a Google Assistant Action in less then 30 min?"
     },
     {
-      url: "https://medium.com/@saadpasta/why-react-is-the-best-5a97563f423e",
-      title: "Why REACT is The Best?",
+      url: "https://medium.com/@agustinbenard2000/how-to-update-a-flutter-app-without-asking-users-to-update-ed47fb642429",
+      title: "🚀 How to Update a Flutter App Without Asking Users to Update",
       description:
-        "React is a JavaScript library for building User Interface. It is maintained by Facebook and a community of individual developers and companies."
+        "Imagine this: You’ve launched your app, users love it, and everything seems perfect. Then, one morning over your tea, you spot a critical bug or think of a small UI tweak."
     }
   ],
   display: true // Set false to hide this section, defaults to true
@@ -378,7 +378,7 @@ const podcastSection = {
 
   // Please Provide with Your Podcast embeded Link
   podcast: [
-    "https://anchor.fm/codevcast/embed/episodes/DevStory---Saad-Pasta-from-Karachi--Pakistan-e9givv/a-a15itvo"
+    "https://www.youtube.com/watch?v=UDMC8uqMOnI"
   ],
   display: true // Set false to hide this section, defaults to true
 };
