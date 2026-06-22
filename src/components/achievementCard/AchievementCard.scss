@@ -16,8 +16,16 @@
   box-shadow: 0 4px 8px $lightBoxShadow, 0 16px 32px $lightBoxShadowDark;
 }
 
-.dark-mode.certificate-card:hover {
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.35), 0 16px 32px $achievementCertificateCardHoverDark;
+/* ── Dark mode base — matches project-card-dark ─────────────── */
+.dark-mode .certificate-card {
+  background-color: rgba(30, 30, 50, 0.7);
+  border-color: rgba(99, 102, 241, 0.15);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3), 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+.dark-mode .certificate-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.35), 0 16px 32px rgba(0, 0, 0, 0.3);
 }
 
 /* ── Card image area ────────────────────────────────────────────────────── */
