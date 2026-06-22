@@ -16,14 +16,14 @@
   box-shadow: 0 4px 8px $lightBoxShadow, 0 16px 32px $lightBoxShadowDark;
 }
 
-/* ── Dark mode base — matches project-card-dark ─────────────── */
-.dark-mode .certificate-card {
+/* ── Dark mode base — compound selector (both classes on same element) ── */
+.dark-mode.certificate-card {
   background-color: rgba(30, 30, 50, 0.7);
   border-color: rgba(99, 102, 241, 0.15);
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3), 0 6px 20px rgba(0, 0, 0, 0.2);
 }
 
-.dark-mode .certificate-card:hover {
+.dark-mode.certificate-card:hover {
   transform: translateY(-4px);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.35), 0 16px 32px rgba(0, 0, 0, 0.3);
 }
@@ -67,10 +67,18 @@
   margin: 14px 0 6px;
 }
 
+.dark-mode.card-title {
+  color: $textColorDark;
+}
+
 .card-subtitle {
   color: $cardSubtitle;
   font-size: 0.88rem;
   line-height: 1.6;
+}
+
+.dark-mode.card-subtitle {
+  color: rgba(226, 232, 240, 0.65);
 }
 
 /* ── Grid ───────────────────────────────────────────────────────────────── */
