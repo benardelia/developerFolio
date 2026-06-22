@@ -1,46 +1,97 @@
 @import "../../_globalColor";
 
-.small-dark {
-  color: $textColorDark !important;
-}
+/* ═══════════════════════════════════════════════════════════
+   BLOG CARDS  — same card system as other sections
+   ═══════════════════════════════════════════════════════════ */
 
+/* ── Card wrapper (no exploding-circle hover effect) ───────── */
 .blog-container {
-  border-radius: 10px;
-  color: $blogCardContainerColor;
-  background-color: $lightBackground1;
-  box-shadow: 0 0 36px $lightBoxShadow;
+  background-color: $lightBackground2;
+  border-radius: 16px;
+  border: 1px solid $lightBorder1;
+  box-shadow: 0 1px 3px $lightBoxShadow, 0 6px 20px $lightBoxShadow;
+  height: auto;
+  min-height: 220px;
+  overflow: hidden;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
   cursor: pointer;
-  height: 200px;
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  color: $textColor;
 }
 
+.blog-container:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 8px $lightBoxShadow, 0 16px 32px $lightBoxShadowDark;
+}
+
+/* ── Dark mode blog card ───────────────────────────────────── */
+.dark-mode .blog-container {
+  background-color: rgba(30, 30, 50, 0.7);
+  border-color: rgba(99, 102, 241, 0.15);
+  color: $textColorDark;
+}
+
+.dark-mode .blog-container:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.35), 0 16px 32px rgba(0, 0, 0, 0.3);
+}
+
+/* ── Accent bar at top of each card ────────────────────────── */
+.blog-card {
+  display: block;
+  position: relative;
+  text-decoration: none;
+  height: 100%;
+  flex: 1;
+}
+
+.blog-card::before {
+  content: "";
+  display: block;
+  height: 4px;
+  background: linear-gradient(90deg, $buttonColor, $buttonHover);
+  border-radius: 16px 16px 0 0;
+}
+
+/* ── Title ─────────────────────────────────────────────────── */
 .blog-title {
   color: $blogCardTitleColor;
-  font-size: 1.375rem;
-  line-height: 24px;
+  font-size: 1.05rem;
+  line-height: 1.4;
   font-weight: 700;
-  margin-left: 20px;
-  margin-right: 20px;
-  margin-bottom: 14px;
-  margin-top: 32px;
+  letter-spacing: -0.015em;
+  margin: 20px 20px 10px;
   overflow: hidden;
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
 }
 
-.small {
-  font-size: 1.063rem;
-  font-weight: 400;
-  line-height: 1.5rem;
-  color: $cardSubtitle;
-  padding: 0px 20px;
-  overflow: hidden;
-  display: -webkit-box;
-  -webkit-line-clamp: 4;
-  -webkit-box-orient: vertical;
-  margin: 0px;
+.dark-mode .blog-title {
+  color: $textColorDark;
 }
 
+/* ── Description ───────────────────────────────────────────── */
+.small {
+  font-size: 0.88rem;
+  font-weight: 400;
+  line-height: 1.6;
+  color: $cardSubtitle;
+  padding: 0 20px 20px;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  margin: 0;
+  flex: 1;
+}
+
+.dark-mode .small {
+  color: rgba(226, 232, 240, 0.65);
+}
+
+/* ── Arrow icon (top-right) ────────────────────────────────── */
 .go-corner {
   display: flex;
   align-items: center;
@@ -48,102 +99,39 @@
   position: absolute;
   width: 32px;
   height: 32px;
-  overflow: hidden;
-  top: 0;
+  top: 4px;       /* sits below the accent bar */
   right: 0;
-  background-color: $buttonColor;
-  border-radius: 0 4px 0 32px;
+  background-color: transparent;
+  border-radius: 0;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.blog-container:hover .go-corner {
+  opacity: 1;
 }
 
 .go-arrow {
-  margin-top: -4px;
-  margin-right: -4px;
-  color: $textColorDark;
-  font-family: courier, sans;
+  color: $buttonColor;
+  font-size: 1.1rem;
 }
 
-.blog-card {
-  display: block;
-  position: relative;
-  background-color: transparent;
-  border-radius: 4px;
-  text-decoration: none;
-  z-index: 0;
-  overflow: hidden;
-  height: 100%;
-}
+/* ── Remove old exploding-circle hover effects ─────────────── */
+/* .blog-card::before now handled above as accent bar */
 
-.blog-card::before {
-  content: "";
-  position: absolute;
-  z-index: -1;
-  top: -16px;
-  right: -16px;
-  background: $buttonColor;
-  height: 32px;
-  width: 32px;
-  border-radius: 32px;
-  transform: scale(1);
-  transform-origin: 50% 50%;
-  transition: transform 0.4s ease-out;
-}
-
-.blog-card:hover::before {
-  transform: scale(30);
-}
-
-.blog-card:hover > .small {
-  transition: all 0.3s ease-out;
-  color: $blogCardHoverSmallColor;
-}
-
-.blog-card:hover > h3 {
-  transition: all 0.3s ease-out;
-  color: $darkBoxShadow2;
-}
-
-@media screen and (max-width: 480px) and (min-width: 300px),
-  (min-width: 925px) and (max-width: 1024px),
-  (min-width: 1405px) and (max-width: 1550px) {
-  .blog-card:hover::before {
-    transform: scale(30);
-  }
-}
-
-@media screen and (min-width: 481px) and (max-width: 675px),
-  (min-width: 1025px) and (max-width: 1404px),
-  (min-width: 1551px) {
-  .blog-card:hover::before {
-    transform: scale(40);
-  }
-  .blog-card::before {
-    transition: transform 0.45s ease-out;
-  }
-}
-
-@media screen and (min-width: 675px) and (max-width: 860px) {
-  .blog-card:hover::before {
-    transform: scale(50);
-  }
-  .blog-card::before {
-    transition: transform 0.5s ease-out;
-  }
-}
-
-@media screen and (min-width: 860px) and (max-width: 924px) {
-  .blog-card:hover::before {
-    transform: scale(60);
-  }
-  .blog-card::before {
-    transition: transform 0.5s ease-out;
-  }
-}
-
-@media screen and (max-width: 480px) and (min-width: 300px) {
-  .blog-title {
-    font-size: 1.125rem;
-  }
-}
+/* ── Dark box-shadow card variant ──────────────────────────── */
 .blog-card-shadow {
-  box-shadow: 1px 0px 20px $darkBoxShadow2;
+  box-shadow: none;
+}
+
+/* ── Small-dark (dark mode text helper) ────────────────────── */
+.small-dark {
+  color: $textColorDark !important;
+}
+
+/* ── Responsive ────────────────────────────────────────────── */
+@media screen and (max-width: 480px) {
+  .blog-title {
+    font-size: 0.95rem;
+  }
 }

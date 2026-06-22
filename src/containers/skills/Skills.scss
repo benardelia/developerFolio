@@ -1,13 +1,16 @@
 @import "../../_globalColor";
 
+/* ── Skills section ─────────────────────────────────────────────────────── */
 .skills-main-div {
   display: flex;
   width: 100%;
   overflow: hidden;
+  gap: 2rem;
+  align-items: center;
 }
 
 .skills-text-div {
-  margin-left: 50px;
+  margin-left: 40px;
 }
 
 .skills-main-div > * {
@@ -20,45 +23,50 @@
   height: auto;
 }
 
+/* ── Heading ────────────────────────────────────────────────────────────── */
 .skills-heading {
-  font-size: 56px;
-  font-weight: 400;
+  font-size: 52px;
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  line-height: 1.1;
 }
+
 .subTitle {
   color: $subTitle;
 }
 
-/* Media Query */
+/* ── Responsive ──────────────────────────────────────────────────────────── */
 @media (max-width: 1380px) {
   .skills-heading {
     font-size: 40px;
   }
 }
+
 @media (max-width: 768px) {
   .skills-heading {
     font-size: 30px;
     text-align: center;
+    letter-spacing: -0.025em;
   }
   .greeting-text-p {
-    font-size: 16px;
+    font-size: 1rem;
     line-height: normal;
   }
   .skills-main-div {
     flex-direction: column;
   }
   .skills-text-div {
-    margin-left: 0px;
+    margin-left: 0;
     margin: 20px;
   }
   .skills-text {
-    font-size: 16px;
+    font-size: 0.95rem;
   }
   .skills-text-subtitle {
-    font-size: 16px;
+    font-size: 0.95rem;
     text-align: center;
   }
   .skills-image-div {
-    /* display: none; */
     order: 2;
   }
 }

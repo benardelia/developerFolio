@@ -1,90 +1,127 @@
 @import "../../_globalColor";
 
-.card-image {
-  max-width: 100%;
-  height: auto;
-  width: 250px;
-}
-.card-title {
-  color: $titleColor;
-  font-size: 22px;
-  line-height: 24px;
-  font-weight: 700;
-  margin: 15px 0 0 0;
-}
-.card-subtitle {
-  color: $cardSubtitle;
-  font-size: 17px;
-  line-height: 1.5rem;
-}
+/* ── Project card (shared) ─────────────────────────────────────────────── */
 .project-card {
   display: flex;
   flex-direction: column;
   background-color: $lightBackground2;
-  padding: 1.5rem;
-  border-radius: 10px;
+  padding: 0 0 1.25rem;       /* image bleeds to edges, padding below */
+  border-radius: 16px;
   border: 1px solid $lightBorder1;
-  justify-content: center;
+  overflow: hidden;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
+
 .project-card-light {
-  box-shadow: $lightBoxShadowDark 0px 10px 30px -15px;
-  -webkit-transition: all 0.3s ease;
-  -o-transition: all 0.3s ease;
-  transition: all 0.3s ease;
+  box-shadow: 0 1px 3px $lightBoxShadow, 0 6px 20px $lightBoxShadow;
 }
 
 .project-card-dark {
-  box-shadow: 0px 10px 30px -15px $darkBoxShadow;
-  -webkit-transition: all 0.3s ease;
-  -o-transition: all 0.3s ease;
-  transition: all 0.25s ease;
+  background-color: rgba(30, 30, 50, 0.7);
+  border-color: rgba(99, 102, 241, 0.15);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3), 0 6px 20px rgba(0, 0, 0, 0.2);
 }
 
-.project-detail {
-  text-align: center;
-}
 .project-card-light:hover {
-  box-shadow: $lightBoxShadowDark 0px 20px 30px -10px;
+  transform: translateY(-4px);
+  box-shadow: 0 4px 8px $lightBoxShadow, 0 16px 32px $lightBoxShadowDark;
 }
+
 .project-card-dark:hover {
-  box-shadow: 0px 20px 30px -10px $darkBoxShadow;
+  transform: translateY(-4px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.35), 0 16px 32px rgba(0, 0, 0, 0.3);
 }
+
+/* ── Project image area ─────────────────────────────────────────────────── */
 .project-image {
   position: relative;
-  height: 250px;
+  height: 220px;
   overflow: hidden;
   display: flex;
   justify-content: center;
   align-items: center;
+  background: $lightBackground3;
+  border-radius: 14px 14px 0 0;
 }
 
+.card-image {
+  max-width: 100%;
+  height: auto;
+  width: 200px;
+  filter: drop-shadow(0 2px 10px rgba(0, 0, 0, 0.12));
+  transition: transform 0.3s ease;
+}
+
+.project-card:hover .card-image {
+  transform: scale(1.06);
+}
+
+/* ── Text content ───────────────────────────────────────────────────────── */
+.project-detail {
+  text-align: center;
+  padding: 0 1.25rem;
+}
+
+.card-title {
+  color: $titleColor;
+  font-size: 1.1rem;
+  line-height: 1.35;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin: 14px 0 6px;
+}
+
+.card-subtitle {
+  color: $cardSubtitle;
+  font-size: 0.88rem;
+  line-height: 1.65;
+}
+
+/* ── Grid ────────────────────────────────────────────────────────────────── */
 .projects-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 1rem 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+  gap: 1.25rem;
+}
+
+/* ── Footer tags ─────────────────────────────────────────────────────────── */
+.project-card-footer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 6px;
+  padding: 12px 1.25rem 0;
 }
 
 .project-card-footer span.project-tag {
-  background: $buttonColor;
-  color: $lightBackground3;
+  background: rgba(99, 102, 241, 0.1);
+  color: $buttonColor;
+  border: 1px solid rgba(99, 102, 241, 0.2);
   vertical-align: middle;
   align-items: center;
-  border-radius: 4px;
+  border-radius: 100px;
   display: inline-flex;
   font-size: 0.75rem;
+  font-weight: 600;
   height: 2em;
   justify-content: center;
   white-space: nowrap;
   line-height: 1.5;
-  margin: 0 0.5rem 0.5rem 0;
-  padding: 0 0.75em;
+  padding: 0 0.85em;
   cursor: pointer;
-  transition: 0.2s ease-in;
+  transition: background 0.2s ease, color 0.2s ease;
 }
 
+.project-card-footer span.project-tag:hover {
+  background: $buttonColor;
+  color: #ffffff;
+  border-color: $buttonColor;
+}
+
+/* ── Responsive ──────────────────────────────────────────────────────────── */
 @media (max-width: 768px) {
   .project-subtitle {
-    font-size: 16px;
+    font-size: 0.93rem;
     text-align: center;
   }
 }

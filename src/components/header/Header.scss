@@ -1,14 +1,16 @@
 @import "../../_globalColor";
 
-/*React-headroom*/
+/* ── Headroom wrapper ──────────────────────────────────────────────────── */
 .headroom-wrapper {
-  max-height: 100px;
+  max-height: 80px;
 }
 
-/* header */
-
+/* ── Dark menu ─────────────────────────────────────────────────────────── */
 .dark-menu {
-  background-color: $darkBackground !important;
+  background: rgba(19, 19, 31, 0.85) !important;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(99, 102, 241, 0.12) !important;
   color: $textColorDark;
 }
 
@@ -17,14 +19,22 @@
 }
 
 .dark-menu li a:hover {
-  background-color: $buttonColor !important;
+  color: $buttonColor !important;
+  background-color: transparent !important;
 }
 
+/* ── Header base ───────────────────────────────────────────────────────── */
 .header {
-  background-color: $lightBackground1;
+  background: rgba(250, 250, 250, 0.88);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(99, 102, 241, 0.1);
   max-width: 100%;
-  padding: 15px 20px;
-  margin: 0px auto;
+  padding: 0 32px;
+  height: 68px;
+  display: flex;
+  align-items: center;
+  transition: background 0.3s ease, box-shadow 0.3s ease;
 }
 
 .header ul {
@@ -34,29 +44,38 @@
   overflow: hidden;
 }
 
+/* ── Greyed brackets ───────────────────────────────────────────────────── */
 .grey-color {
-  color: $subTitle;
+  color: $buttonColor;
+  opacity: 0.55;
 }
 
+/* ── Nav links ─────────────────────────────────────────────────────────── */
 .header li a {
   display: block;
-  padding: 15px 20px;
+  padding: 8px 14px;
   color: $textColor;
   text-decoration: none;
+  font-size: 0.88rem;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  border-radius: 6px;
+  transition: color 0.2s ease, background 0.2s ease;
 }
 
 .header li a:hover,
 .header .menu-btn:hover {
+  color: $buttonColor;
   background-color: $headerHoverBG;
 }
 
+/* ── Logo ──────────────────────────────────────────────────────────────── */
 .header .logo {
   display: block;
   flex: none;
   float: left;
-  font-size: 1.5em;
+  font-size: 1.35em;
   text-decoration: none;
-  margin-top: 10px;
   line-height: normal;
 }
 
@@ -65,24 +84,25 @@
   font-weight: bold;
   font-variant-ligatures: no-common-ligatures;
   -webkit-font-variant-ligatures: no-common-ligatures;
-  padding: 0 10px;
+  padding: 0 6px;
+  background: linear-gradient(135deg, $buttonColor, $buttonHover);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
-/* menu */
-
+/* ── Hamburger menu ────────────────────────────────────────────────────── */
 .header .menu {
   clear: both;
   max-height: 0;
-  transition: max-height 0.2s ease-out;
+  transition: max-height 0.25s ease-out;
 }
-
-/* menu icon */
 
 .header .menu-icon {
   cursor: pointer;
   display: inline-block;
   float: right;
-  padding: 28px 20px;
+  padding: 24px 8px;
   position: relative;
   user-select: none;
 }
@@ -93,7 +113,8 @@
   height: 2px;
   position: relative;
   transition: background 0.2s ease-out;
-  width: 18px;
+  width: 20px;
+  border-radius: 2px;
 }
 
 .header .menu-icon .navicon-dark {
@@ -109,6 +130,7 @@
   position: absolute;
   transition: all 0.2s ease-out;
   width: 100%;
+  border-radius: 2px;
 }
 
 .header .menu-icon .navicon-dark:before,
@@ -120,24 +142,24 @@
   position: absolute;
   transition: all 0.2s ease-out;
   width: 100%;
+  border-radius: 2px;
 }
 
 .header .menu-icon .navicon:before {
-  top: 5px;
+  top: 6px;
 }
 
 .header .menu-icon .navicon:after {
-  top: -5px;
+  top: -6px;
 }
 
-/* menu btn */
-
+/* ── Menu toggle ───────────────────────────────────────────────────────── */
 .header .menu-btn {
   display: none;
 }
 
 .header .menu-btn:checked ~ .menu {
-  max-height: 486px;
+  max-height: 520px;
 }
 
 .header .menu-btn:checked ~ .menu-icon .navicon {
@@ -157,8 +179,7 @@
   top: 0;
 }
 
-/* 48em = 768px */
-
+/* ── Desktop layout ────────────────────────────────────────────────────── */
 @media (min-width: 48em) {
   .header li {
     float: left;
@@ -175,8 +196,10 @@
     display: none;
   }
 }
+
 @media (max-width: 960px) and (min-width: 768px) {
   .header {
-    font-size: 12px;
+    font-size: 13px;
+    padding: 0 20px;
   }
 }

@@ -1,47 +1,59 @@
 @import "../../_globalColor";
 
+/* ── Primary pill button ──────────────────────────────────────────────── */
 .main-button {
   background-color: $buttonColor;
-  border: solid 1px $buttonColor;
-  color: $textColorDark;
-  font-weight: 700;
+  border: 1.5px solid $buttonColor;
+  color: #ffffff;
+  font-weight: 600;
+  font-family: inherit;
+  letter-spacing: 0.01em;
   width: max-content;
-  padding: 13px 22px;
-  margin-right: 50px;
-  text-transform: uppercase;
-  border-radius: 6px;
+  padding: 12px 24px;
+  margin-right: 0;
+  text-transform: none;
+  border-radius: 100px;      /* pill shape */
   text-align: center;
   text-decoration: none;
-  display: block;
-  margin-top: 20px;
-  font-size: 1rem;
+  display: inline-block;
+  margin-top: 0;
+  font-size: 0.93rem;
   cursor: pointer;
-  transition: all 0.3s ease-in-out 0s;
+  transition: background 0.22s ease, border-color 0.22s ease,
+    color 0.22s ease, transform 0.22s ease, box-shadow 0.22s ease;
+  box-shadow: 0 2px 12px rgba(99, 102, 241, 0.22);
 }
+
 .main-button:hover {
-  background-color: $darkBoxShadow2;
+  background-color: transparent;
+  border-color: $buttonColor;
   color: $buttonColor;
-  transition: all 0.3s ease 0s;
-  transform: translateY(-3px);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(99, 102, 241, 0.28);
 }
+
+/* ── Project button wrapper ───────────────────────────────────────────── */
 .project-button {
   display: flex;
   justify-content: center;
   margin-top: 20px;
+  gap: 8px;
 }
+
 .project-button > .main-button {
   margin-right: 0 !important;
 }
-/* Media Query */
+
+/* ── Responsive ───────────────────────────────────────────────────────── */
 @media (max-width: 768px) {
   .main-button {
-    font-size: 0.938rem;
-    padding: 12px 18px;
-    margin-right: 0px;
+    font-size: 0.88rem;
+    padding: 11px 20px;
   }
 }
+
 @media (max-width: 320px) {
   .main-button {
-    font-size: 0.75rem;
+    font-size: 0.8rem;
   }
 }

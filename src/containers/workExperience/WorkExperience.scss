@@ -1,19 +1,18 @@
-.experience-cards-div {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
-  gap: 1rem 1rem;
-}
+@import "../../_globalColor";
 
+/* ── Experience section ─────────────────────────────────────────────────── */
 .experience-heading {
-  font-size: 56px;
-  font-weight: 400;
+  font-size: 52px;
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  line-height: 1.1;
 }
 
 .experience-container {
   display: flex;
   width: 90%;
   padding: 20px 10px;
-  margin: 0px auto;
+  margin: 0 auto;
   margin-top: 2rem;
 }
 
@@ -21,8 +20,13 @@
   flex: 1;
 }
 
-/* Media Query */
+.experience-cards-div {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+  gap: 1.25rem;
+}
 
+/* ── Responsive ──────────────────────────────────────────────────────────── */
 @media (max-width: 1380px) {
   .experience-heading {
     font-size: 40px;
@@ -33,5 +37,6 @@
   .experience-heading {
     font-size: 30px;
     text-align: center;
+    letter-spacing: -0.025em;
   }
 }

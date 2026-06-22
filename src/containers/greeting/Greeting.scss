@@ -1,28 +1,25 @@
 @import "../../_globalColor";
 
+/* ── Hero wrapper ──────────────────────────────────────────────────────── */
 .main {
   width: 90%;
   padding: 20px 10px;
-  margin: 0px auto;
+  margin: 0 auto;
   margin-top: 4rem;
 }
+
 .greet-main {
   width: 90%;
   padding: 20px 10px;
-  margin: 0px auto;
-  margin-top: 2rem;
+  margin: 0 auto;
+  margin-top: 3rem;
 }
 
+/* ── Layout ─────────────────────────────────────────────────────────────── */
 .greeting-main {
   display: flex;
-}
-
-.subTitle {
-  color: $subTitle !important;
-}
-
-.greeting-main {
-  display: flex;
+  align-items: center;
+  gap: 2rem;
 }
 
 .greeting-main > * {
@@ -30,34 +27,55 @@
   margin-bottom: 30px;
 }
 
-.empty-div {
-  margin-bottom: 40px;
+/* ── Subtitle ───────────────────────────────────────────────────────────── */
+.subTitle {
+  color: $subTitle !important;
 }
 
+/* ── Spacer ─────────────────────────────────────────────────────────────── */
+.empty-div {
+  margin-bottom: 24px;
+}
+
+/* ── CTA buttons row ─────────────────────────────────────────────────────── */
 .button-greeting-div {
   display: flex;
-  margin-top: 40px;
+  align-items: center;
+  gap: 16px;
+  margin-top: 36px;
+  flex-wrap: wrap;
 }
+
 .download-link-button {
   text-decoration: none;
 }
 
+/* ── Hero headline ───────────────────────────────────────────────────────── */
 .greeting-text {
-  font-size: 70px;
-  line-height: 1.1;
+  font-size: 68px;
+  font-weight: 800;
+  line-height: 1.08;
+  letter-spacing: -0.04em;
   color: $textColor !important;
 }
 
+/* ── Hero paragraph ─────────────────────────────────────────────────────── */
 .greeting-text-p {
-  font-size: 30px;
-  line-height: 40px;
+  font-size: 1.15rem;
+  line-height: 1.75;
+  color: $subTitle;
+  font-weight: 400;
+  max-width: 560px;
+  margin-top: 16px;
 }
 
+/* ── Hero image ──────────────────────────────────────────────────────────── */
 .greeting-image-div > img {
   max-width: 100%;
   height: auto;
 }
 
+/* ── Waving hand ─────────────────────────────────────────────────────────── */
 .wave-emoji {
   animation-duration: 1.8s;
   animation-iteration-count: infinite;
@@ -67,50 +85,39 @@
 }
 
 @keyframes wave {
-  0% {
-    transform: rotate(0deg);
+  0%   { transform: rotate(0deg); }
+  10%  { transform: rotate(-10deg); }
+  20%  { transform: rotate(12deg); }
+  30%  { transform: rotate(-10deg); }
+  40%  { transform: rotate(9deg); }
+  50%  { transform: rotate(0deg); }
+  100% { transform: rotate(0deg); }
+}
+
+/* ── Responsive ──────────────────────────────────────────────────────────── */
+@media (max-width: 1380px) {
+  .greeting-text {
+    font-size: 52px;
   }
-  10% {
-    transform: rotate(-10deg);
-  }
-  20% {
-    transform: rotate(12deg);
-  }
-  30% {
-    transform: rotate(-10deg);
-  }
-  40% {
-    transform: rotate(9deg);
-  }
-  50% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(0deg);
+  .greeting-text-p {
+    font-size: 1.05rem;
   }
 }
 
-/* Media Query */
-@media (max-width: 1380px) {
-  .greeting-text {
-    font-size: 50px;
-  }
-  .greeting-text-p {
-    font-size: 20px;
-  }
-}
 @media (max-width: 768px) {
   .button-greeting-div {
-    justify-content: space-around;
+    justify-content: center;
   }
   .greeting-text {
-    font-size: 30px;
+    font-size: 36px;
     text-align: center;
+    letter-spacing: -0.025em;
   }
   .greeting-text-p {
-    font-size: 16px;
-    line-height: normal;
+    font-size: 1rem;
+    line-height: 1.65;
     text-align: center;
+    margin: 0 auto;
   }
   .greeting-main {
     display: block;

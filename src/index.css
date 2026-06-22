@@ -1,3 +1,7 @@
+/* ── Google Fonts: Inter ──────────────────────────────────────────────── */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+/* ── Custom fonts (preserved) ────────────────────────────────────────── */
 @font-face {
   font-family: "Agustina Regular";
   font-style: normal;
@@ -12,25 +16,71 @@
     url("./assets/fonts/Montserrat-Regular.ttf") format("woff");
   font-display: swap;
 }
+
+/* ── Code font ───────────────────────────────────────────────────────── */
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+  font-family: "SF Mono", source-code-pro, Menlo, Monaco, Consolas,
+    "Courier New", monospace;
 }
+
+/* ── Base reset & typography ─────────────────────────────────────────── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 html,
 body {
   scroll-behavior: smooth;
 }
+
 body {
   margin: 0;
-  font: 19px / 23px Montserrat, "Montserrat", sans-serif;
+  font-family: "Inter", "Montserrat", sans-serif;
+  font-size: 17px;
+  line-height: 1.65;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  letter-spacing: -0.01em;
 }
-/* Media Query */
+
+/* ── Headings ────────────────────────────────────────────────────────── */
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Inter", "Montserrat", sans-serif;
+  letter-spacing: -0.03em;
+  line-height: 1.15;
+}
+
+/* ── Selection ───────────────────────────────────────────────────────── */
+::selection {
+  background: rgba(99, 102, 241, 0.18);
+}
+
+/* ── Scrollbar (webkit) ──────────────────────────────────────────────── */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(99, 102, 241, 0.35);
+  border-radius: 100px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(99, 102, 241, 0.6);
+}
+
+/* ── Responsive type scale ───────────────────────────────────────────── */
 @media (max-width: 1380px) {
-  html,
   body {
-    font-size: rem;
-    line-height: normal;
+    font-size: 16px;
+    line-height: 1.6;
+  }
+}
+@media (max-width: 768px) {
+  body {
+    font-size: 15px;
   }
 }

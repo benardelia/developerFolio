@@ -1,15 +1,41 @@
 @import "../../_globalColor";
 
-.footer-text {
-  text-align: center;
-  color: $subTitle !important;
-}
-
-.dark-mode {
-  color: $textColorDark !important;
-}
-
+/* ── Footer wrapper ─────────────────────────────────────────── */
 .footer-div {
-  margin-top: 2rem;
-  padding-bottom: 1rem;
+  margin-top: 4rem;
+  padding: 2.5rem 1rem 2rem;
+  border-top: 1px solid $lightBorder1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.dark-mode .footer-div {
+  border-top-color: rgba(99, 102, 241, 0.12);
+}
+
+/* ── Footer text ────────────────────────────────────────────── */
+.footer-text {
+  font-size: 0.82rem;
+  color: $subTitle;
+  text-align: center;
+  margin: 0;
+  line-height: 1.6;
+}
+
+.dark-mode .footer-text {
+  color: rgba(226, 232, 240, 0.45) !important;
+}
+
+/* ── Footer link ────────────────────────────────────────────── */
+.footer-text a {
+  color: $buttonColor;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.2s ease;
+}
+
+.footer-text a:hover {
+  color: $buttonHover;
 }

@@ -1,77 +1,108 @@
 @import "../../_globalColor";
 
-.card-image {
-  max-width: 100%;
-  height: auto;
-  width: 250px;
-}
-.card-title {
-  color: $titleColor;
-  font-size: 1.375rem;
-  line-height: 24px;
-  font-weight: 700;
-  margin: 15px 0 0 0;
-}
-.card-subtitle {
-  color: $cardSubtitle;
-  font-size: 1.063rem;
-  line-height: 1.5rem;
-}
+/* ── Achievement card ──────────────────────────────────────────────────── */
 .certificate-card {
   background-color: $lightBackground2;
-  box-shadow: $lightBoxShadowDark 0px 10px 30px -15px;
+  box-shadow: 0 1px 3px $lightBoxShadow, 0 6px 20px $lightBoxShadow;
   padding: 1.5rem;
-  border-radius: 10px;
+  border-radius: 16px;
   border: 1px solid $lightBorder1;
-  -webkit-transition: all 0.3s ease;
-  -o-transition: all 0.3s ease;
-  transition: all 0.3s ease;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  overflow: hidden;
 }
-.certificate-detail-div {
-  text-align: center;
-}
+
 .certificate-card:hover {
-  box-shadow: $lightBoxShadowDark 0px 20px 30px -10px;
+  transform: translateY(-4px);
+  box-shadow: 0 4px 8px $lightBoxShadow, 0 16px 32px $lightBoxShadowDark;
 }
+
 .dark-mode.certificate-card:hover {
-  box-shadow: $achievementCertificateCardHoverDark 0px 20px 30px -10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.35), 0 16px 32px $achievementCertificateCardHoverDark;
 }
+
+/* ── Card image area ────────────────────────────────────────────────────── */
 .certificate-image-div {
   position: relative;
-  height: 250px;
+  height: 200px;
   overflow: hidden;
   display: flex;
   justify-content: center;
   align-items: center;
+  background: $lightBackground3;
+  border-radius: 10px;
+  margin-bottom: 0.5rem;
 }
+
+.card-image {
+  max-width: 100%;
+  height: auto;
+  width: 160px;
+  filter: drop-shadow(0 2px 8px $lightBoxShadowDark);
+  transition: transform 0.3s ease;
+}
+
+.certificate-card:hover .card-image {
+  transform: scale(1.05);
+}
+
+/* ── Card text ──────────────────────────────────────────────────────────── */
+.certificate-detail-div {
+  text-align: center;
+}
+
+.card-title {
+  color: $titleColor;
+  font-size: 1.1rem;
+  line-height: 1.35;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin: 14px 0 6px;
+}
+
+.card-subtitle {
+  color: $cardSubtitle;
+  font-size: 0.88rem;
+  line-height: 1.6;
+}
+
+/* ── Grid ───────────────────────────────────────────────────────────────── */
 .achievement-cards-div {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 1rem 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.25rem;
 }
+
+/* ── Footer ─────────────────────────────────────────────────────────────── */
 .certificate-card-footer {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
   justify-content: center;
+  margin-top: 12px;
+  gap: 6px;
 }
+
 .certificate-card-footer span.certificate-tag {
-  background: $buttonColor;
-  color: $lightBackground3;
+  background: rgba(99, 102, 241, 0.1);
+  color: $buttonColor;
+  border: 1px solid rgba(99, 102, 241, 0.2);
   vertical-align: middle;
   align-items: center;
-  border-radius: 4px;
+  border-radius: 100px;
   display: inline-flex;
   font-size: 0.75rem;
+  font-weight: 600;
   height: 2em;
   justify-content: center;
   white-space: nowrap;
   line-height: 1.5;
-  margin: 0 0.5rem 0.5rem 0;
-  padding: 0 0.75em;
+  padding: 0 0.85em;
   cursor: pointer;
-  transition: 0.2s ease-in;
+  transition: background 0.2s ease, color 0.2s ease;
 }
+
 span.certificate-tag:hover {
-  background: $buttonHover;
+  background: $buttonColor;
+  color: #ffffff;
+  border-color: $buttonColor;
 }
