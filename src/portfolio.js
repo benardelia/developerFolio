@@ -165,15 +165,19 @@ const techStack = {
   experience: [
     {
       Stack: "Mobile Development/Design", //Insert stack or technology you have experience in
-      progressPercentage: "90%" //Insert relative proficiency in percentage
+      progressPercentage: "95%" //Insert relative proficiency in percentage
     },
     {
       Stack: "Backend",
-      progressPercentage: "80%"
+      progressPercentage: "90%"
+    },
+    {
+      Stack: "Problem Solving",
+      progressPercentage: "90%"
     },
     {
       Stack: "Programming",
-      progressPercentage: "70%"
+      progressPercentage: "96%"
     }
   ],
   displayCodersrank: false // Set true to display codersrank badges section need to changes your username in src/containers/skillProgress/skillProgress.js:17:62, defaults to false
@@ -232,10 +236,33 @@ const bigProjects = {
   subtitle: "I was fully involved in a large-scale project, contributing to every aspect of its development",
   projects: [
     {
+      image: require("./assets/images/e-ardhi.png"),
+      projectName: "e-Ardhi",
+      projectDesc: "e-Ardhi is a mobile and web application that allows landowners to access their land records and information from the Ministry of Lands, Housing and Human Settlements Development.",
+      footerLink: [
+        {
+          name: "Web App",
+          url: "https://eardhi.lands.go.tz/"
+        },
+        {
+          name: "Android App",
+          url: "https://play.google.com/store/apps/details?id=tz.go.gms&hl=en"
+        },
+        {
+          name: "iOS App",
+          url: "https://apps.apple.com/tz/app/ebarua/id6479197288"
+        }
+      ]
+    },
+    {
       image: require("./assets/images/kakakuona-oxygen.webp"),
       projectName: "Kakakuona Oxygen",
-      projectDesc: "chatting app for secure communication.",
+      projectDesc: "Kakakuona Oxygen is a secure chatting application designed to facilitate fast, reliable, and confidential communication.",
       footerLink: [
+        {
+          name: "Web App",
+          url: "https://kakakuona.tz/"
+        },
         {
           name: "Android App",
           url: "https://play.google.com/store/apps/details?id=im.oxygen.app"
@@ -250,7 +277,7 @@ const bigProjects = {
     {
       image: require("./assets/images/emblem.png"),
       projectName: "eBarua",
-      projectDesc: "Mailing app for secure mailing communication.",
+      projectDesc: "e-Barua is a comprehensive digital mailing platform designed to facilitate secure, efficient, and official communication for government employees.",
       footerLink: [
         {
           name: "Android App",
